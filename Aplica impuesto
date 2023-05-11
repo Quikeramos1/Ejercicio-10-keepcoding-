@@ -1,0 +1,73 @@
+#Aplicando impuestos
+
+#Haz un programa que aplique un impuesto de 5,5% sobre tres precios introducidos por el usuario.
+#Deben introducirse también el número de ejemplares de producto de cada precio que se compran. Se debe imprimir el subtotal sin tasas,
+#la tasa y la suma de ambos.
+#
+#Restricciones:Manten separadas las partes de entrada, salida y proceso de tu programa
+
+
+def pedir_preci():
+    preci1 = float(input("Introduce el precio del primer artículo: "))
+    preci2 = float(input("Introduce el precio del segundo artículo: "))
+    preci3 = float(input("Introduce el precio del tercer artículo: "))
+    
+    return [preci1, preci2, preci3]
+
+def pedir_cant():
+    cant1 = float(input("Introduce la cantidad del primer artículo: "))
+    cant2 = float(input("Introduce la cantidad del segundo artículo: "))
+    cant3 = float(input("Introduce la cantidad del tercer artículo: "))
+    
+    return [cant1, cant2, cant3]
+
+def pedir_tasas():
+    tasa1 = float((precios[0] * 5.5)/100)
+    tasa2 = float((precios[1] * 5.5)/100)
+    tasa3 = float((precios[2] *5.5)/100)
+    
+    return [tasa1,tasa2,tasa3]
+
+def precicon_tasas():
+    precit1 = precios[0] + importetasas[0]
+    precit2 = precios[1] + importetasas[1]
+    precit3 = precios[2] + importetasas[2]
+    
+    return [precit1, precit2,precit3]
+
+def subto():
+    subto1 = cantidad[0] * precios[0]
+    subto2 = cantidad[1] * precios[1]
+    subto3 = cantidad[2] * precios[2]
+    
+    return [subto1,subto2,subto3]
+
+def totalmas_tas():
+    totaltas1 = (importetasas[0] * cantidad[0])+ precios[0]
+    totaltas2 = (importetasas[1] * cantidad[1]) + precios[1]
+    totaltas3 = (importetasas[2] * cantidad[2]) + precios[2]
+    
+    return [totaltas1,totaltas2, totaltas3]
+
+
+import math
+
+precios = pedir_preci()
+cantidad = pedir_cant()
+importetasas = pedir_tasas()
+preciostasas = precicon_tasas()
+subtotal = subto()
+totalcontasas = totalmas_tas()
+
+
+
+
+
+print("\nEl subtotal del producto 1 sin tasas es {} \nLas tasas son {} \nEl total es {}".format(round(subtotal[0]), round(importetasas[0]), round(totalcontasas[0])))
+print("\nEl subtotal del producto 2 sin tasas es {} \nLas tasas son {} \nEl total es {}".format(round(subtotal[1]), round(importetasas[1]), round(totalcontasas[1])))
+print("\nEl subtotal del producto 3 sin tasas es {} \nLas tasas son {} \nEl total es {}".format(round(subtotal[2]), round(importetasas[2]), round(totalcontasas[2])))
+print("\nEl subtotal de todos los productos sin tasas es {} \nLas tasas son {} \nEl total es {}".format(round(subtotal[0] + subtotal[1] + subtotal[2]), round(importetasas[0] + importetasas[1] + importetasas[2]), round(totalcontasas[0] + totalcontasas[1] + totalcontasas[2])))
+
+
+
+    
